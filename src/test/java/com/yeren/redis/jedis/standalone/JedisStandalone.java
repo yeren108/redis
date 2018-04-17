@@ -14,6 +14,7 @@ public class JedisStandalone {
 	@Before
 	public void setUp() throws InterruptedException {
 		node1 = new Jedis("139.199.124.81", 6370);
+		node1.auth("foobared");
 	}
 
 	@AfterClass
@@ -28,7 +29,7 @@ public class JedisStandalone {
 
 	@Test
 	public void testReadonly() throws Exception {
-		node1.set("blueCat", "haha");
+		node1.set("blueCat", "baby");
 		String string = node1.get("bb");
 		System.out.println(string);
 		System.out.println(node1.get("blueCat"));

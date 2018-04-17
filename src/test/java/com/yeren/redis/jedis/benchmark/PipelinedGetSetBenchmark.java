@@ -6,13 +6,18 @@ import java.util.Calendar;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
-
+/**
+ * 测试管道
+ * @author ThinkPad
+ *
+ */
 public class PipelinedGetSetBenchmark {
-  private static final int TOTAL_OPERATIONS = 20000;
+  private static final int TOTAL_OPERATIONS = 3000;
 
   public static void main(String[] args) throws UnknownHostException, IOException {
     Jedis jedis = new Jedis("139.199.124.81", 6370);
     jedis.connect();
+    jedis.auth("foobared");
     jedis.flushAll();
 
     long begin = Calendar.getInstance().getTimeInMillis();
