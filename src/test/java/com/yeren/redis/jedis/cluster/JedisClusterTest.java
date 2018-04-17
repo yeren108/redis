@@ -12,7 +12,7 @@ import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisPoolConfig;
 
-public class JedisClusterTest3 {
+public class JedisClusterTest {
 	Set<HostAndPort> nodes;
 	JedisCluster jc;
 
